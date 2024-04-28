@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 5173
 
 # Command to run the app
-CMD ["pnpm", "run", "dev"]
+CMD ["pnpm", "start"]
