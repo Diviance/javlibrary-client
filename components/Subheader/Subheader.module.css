@@ -1,6 +1,6 @@
 .header {
   height: rem(56px);
-  background-color: var(--mantine-color-gray-8);
+  background-color: var(--mantine-color-gray-9);
   border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
@@ -23,29 +23,5 @@
 
   @mixin hover {
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-  }
-}
-
-.linkLabel {
-  margin-right: rem(5px);
-}
-
-.dark {
-  @mixin dark {
-    display: none;
-  }
-
-  @mixin light {
-    display: block;
-  }
-}
-
-.light {
-  @mixin light {
-    display: none;
-  }
-
-  @mixin dark {
-    display: block;
   }
 }

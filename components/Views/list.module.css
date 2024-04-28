@@ -1,0 +1,23 @@
+.truncate {
+  max-width: 20px; /* Adjust based on your layout needs */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.virttable {
+  height: calc(100vh - 137px) !important;
+  width: 100%;
+}
+
+.tableHeader {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+}
+
+.link {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  @mixin hover {
+    color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-palePurple-3));
+  }
+}

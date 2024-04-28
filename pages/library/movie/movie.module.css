@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  padding: 25px;
+  background: var(--mantine-color-gray-9);
+  align-items: flex-start;
+  height: 425px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--mantine-color-gray-7);
+  border-right: 1px solid var(--mantine-color-gray-7);
+  border-left: 1px solid var(--mantine-color-gray-7);
+  border-radius: 0 0 5px 5px;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  z-index: 0; /* Keep the image in the background */
+  opacity: 0.1; /* Adjust opacity to make it slightly transparent */
+  object-fit: cover;
+}
+
+.navButtons {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  z-index: 15;
+}
+
+.imageWrapper {
+  flex: 0 0 250px;
+  z-index: 5; /* Fixed size for image container */
+}
+
+.content {
+  flex: 1; /* Takes the rest of the space */
+  padding-left: 20px;
+  z-index: 5;
+}
+
+.fileContainer {
+  border-radius: 5px;
+  border: 1px solid var(--mantine-color-gray-7);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .imageWrapper {
+    display: none;
+  }
+}

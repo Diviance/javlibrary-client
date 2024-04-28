@@ -1,23 +1,90 @@
-import { Title, Text, Anchor } from '@mantine/core';
+import { Title, Text, Stack, Card, Image, Badge, Button, Group, Grid } from '@mantine/core';
 import classes from './Welcome.module.css';
 
 export function Welcome() {
   return (
     <>
-      <Title className={classes.title} ta="center" mt={100}>
-        Welcome to{' '}
-        <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
-          Mantine
-        </Text>
-      </Title>
-      <Text color="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          this guide
-        </Anchor>
-        . To get started edit index.tsx file.
-      </Text>
+      <Grid mt={25} gutter={40} justify="center" overflow="hidden">
+        <Grid.Col span={3}>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Title order={1} fw={300}>Library Status</Title>
+            <Group gap="xl" grow mt="md" mb="xs">
+              <Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Best</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Good</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Unchecked</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+              </Stack>
+              <Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Best</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Good</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+                <Stack gap={0}>
+                  <Text fz={13} c="mutedPurple">JAV Unchecked</Text>
+                  <Text fw={400}>729 Total</Text>
+                  <Text fw={400}>0 Unavailable</Text>
+                </Stack>
+              </Stack>
+            </Group>
+          </Card>
+        </Grid.Col>
+        <Grid.Col span={3}>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Title order={1} fw={300}>Concat Status</Title>
+
+            <Group justify="space-between" mt="md" mb="xs">
+              <Text fw={500}>Norway Fjord Adventures</Text>
+              <Badge color="pink">On Sale</Badge>
+            </Group>
+
+            <Text size="sm" c="dimmed">
+              With Fjord Tours you can explore more of the magical fjord landscapes with tours and
+              activities on and around the fjords of Norway
+            </Text>
+
+            <Button color="blue" fullWidth mt="md" radius="md">
+              Book classic tour now
+            </Button>
+          </Card>
+        </Grid.Col>
+        <Grid.Col span={3}>
+          <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Title order={1} fw={300}>Javinizer Status</Title>
+
+            <Group justify="space-between" mt="md" mb="xs">
+              <Text fw={500}>Norway Fjord Adventures</Text>
+              <Badge color="pink">On Sale</Badge>
+            </Group>
+
+            <Text size="sm" c="dimmed">
+              With Fjord Tours you can explore more of the magical fjord landscapes with tours and
+              activities on and around the fjords of Norway
+            </Text>
+
+            <Button color="blue" fullWidth mt="md" radius="md">
+              Book classic tour now
+            </Button>
+          </Card>
+        </Grid.Col>
+      </Grid>
     </>
   );
 }

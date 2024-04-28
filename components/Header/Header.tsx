@@ -1,20 +1,20 @@
 'use client';
 
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
+import { Menu, Group, Center, Burger, Container, useMantineColorScheme, ActionIcon, useComputedColorScheme } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
+import { IconChevronDown, IconSun, IconMoon } from '@tabler/icons-react';
 import { MantineLogo } from '@mantinex/mantine-logo';
+import cx from 'clsx';
 import classes from './Header.module.css';
 import Link from 'next/link';
 
 const links = [
     { link: '/', label: 'Home' },
     {
-        link: '#Library',
+        link: '/library/movies',
         label: 'Library',
         links: [
             { link: '/library/add', label: 'Add New' },
-            { link: '/library/maintenance', label: 'Maintenance' },
         ],
     },
     {
@@ -26,18 +26,16 @@ const links = [
             { link: '/status/libraries', label: 'Libraries' },
         ],
     },
-    {
-        link: '#Settings',
-        label: 'Settings',
-        links: [
-            { link: '/settings/library', label: 'Library Settings' },
-            { link: '/settings/job', label: 'Job Settings' },
-        ],
-    },
 ];
 
 export function Header() {
     const [opened, { toggle }] = useDisclosure(false);
+    const { toggleColorScheme } = useMantineColorScheme();
+    const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+
+    const toggleTheme = () => {
+        toggleColorScheme(); // This will toggle between 'light' and 'dark'
+    };
 
     const items = links.map((link) => {
         const menuItems = link.links?.map((item) => (
@@ -78,9 +76,15 @@ export function Header() {
         <header className={classes.header}>
             <Container size="responsive" mx={25}>
                 <div className={classes.inner}>
-                    <MantineLogo size={28} />
+                    <Link href="/">
+                        <MantineLogo size={28} />
+                    </Link>
                     <Group gap={5} visibleFrom="sm">
                         {items}
+                        <ActionIcon variant="transparent" color="gray" onClick={toggleTheme}>
+                            <IconSun className={cx(classes.icon, classes.light)} stroke={1.5} />
+                            <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} />
+                        </ActionIcon>
                     </Group>
                     <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
                 </div>
